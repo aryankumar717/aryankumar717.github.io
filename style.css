@@ -1,0 +1,184 @@
+/* style.css */
+
+/* CSS Variables for Color Palette */
+:root {
+  --primary-bg: #1a1a1a;        /* Dark background */
+  --secondary-bg: #282828;      /* Slightly lighter dark for sections/footer */
+  --text-color: #e0e0e0;        /* Light grey for main text */
+  --heading-color: #ffffff;     /* Pure white for headings */
+  --accent-color: #00bcd4;      /* Vibrant Teal for accents (e.g., logo, underline, skill borders) */
+  --accent-light: #4dd0e1;      /* Lighter Teal for hover states */
+  --shadow-color: rgba(0, 188, 212, 0.4); /* Teal-based shadow */
+  --skill-bg-light: rgba(0, 188, 212, 0.1); /* Light transparent teal for skill background */
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
+  color: var(--text-color);
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  display: flex; /* For pushing footer to the bottom */
+  flex-direction: column; /* For pushing footer to the bottom */
+}
+
+header {
+    margin-bottom: 20px; /* To separate the header from the main content */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align navigation links */
+  padding: 20px;
+  background-color: var(--primary-bg); /* Use primary background color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the navbar */
+}
+
+.logo {
+  color: var(--accent-color); /* Use accent color for logo */
+  font-weight: bold;
+  font-size: 24px; /* Slightly increase logo size */
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Increase spacing between links */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-links li a {
+  color: var(--text-color); /* Use text color for links */
+  text-decoration: none;
+  font-size: 16px; /* Increase font size */
+  letter-spacing: 1px;
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+.nav-links li a:hover {
+  color: var(--accent-light); /* Change color on hover using lighter accent */
+}
+
+/* Make main content flexible to push footer down */
+main {
+    flex-grow: 1;
+}
+
+.bio-section {
+  display: flex;
+  padding: 30px 10px;
+  gap: 80px;
+  align-items: center; /* Align items vertically */
+  justify-content: left; /* Center items horizontally */
+  flex-wrap: wrap; /* Wrap items to the next line on smaller screens */
+  max-width: 1200px; /* Max width for the section */
+  margin: 0 auto; /* Center the section */
+}
+
+.bio-img {
+    flex-shrink: 0; /* Ensure the image doesn't shrink */
+    margin-bottom: 20px; /* Margin above text on smaller screens */
+}
+
+.bio-img img {
+  width: 450px;
+  max-width: 200%; /* Ensures the image scales down on smaller screens */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px;
+  filter: grayscale(80%); /* Slightly reduced grayscale */
+  box-shadow: 0 0 25px var(--shadow-color); /* Use accent-based shadow */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Transition for hover effect */
+}
+
+.bio-img img:hover {
+    filter: grayscale(0%); /* Make colorful on hover */
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.bio-text {
+  flex: 1; /* This div will grow to fill available space */
+  min-width: 300px; /* Ensure the text block doesn't get too narrow */
+  max-width: 700px; /* Maximum width for the text block */
+}
+
+.bio-text h1 {
+  color: var(--heading-color); /* Use heading color */
+  font-size: 44px; /* Slightly larger heading */
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Uppercase the name */
+  letter-spacing: 2px;
+}
+
+.underline {
+  width: 350px; /* Slightly longer underline */
+  height: 5px; /* Slightly thicker underline */
+  background-color: var(--accent-color); /* Use accent color for underline */
+  margin-bottom: 25px;
+  border-radius: 2px; /* Slightly rounded corners */
+}
+
+.bio-text p {
+  line-height: 1.7; /* Increased line-height for readability */
+  margin-bottom: 20px;
+  font-size: 18px; /* Increase paragraph text size */
+}
+
+.bio-text h3 {
+    color: var(--accent-color); /* Highlight project title with accent color */
+    margin-top: 30px; /* Give some space from paragraph */
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.bio-text ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.bio-text ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--text-color); /* Use text color for list items */
+}
+
+.skills {
+  margin-top: 30px; /* Give some space from paragraph */
+  display: flex; /* Make skills flexbox */
+  flex-wrap: wrap; /* Wrap skills to the next line */
+  gap: 10px; /* Spacing between skills */
+}
+
+.skills span {
+  border: 1px solid var(--accent-color); /* Use accent color for border */
+  padding: 8px 16px; /* Increase padding */
+  display: inline-block;
+  border-radius: 25px; /* More rounded corners */
+  font-size: 15px; /* Increase font size */
+  background-color: var(--skill-bg-light); /* Use light transparent accent for skill background */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effect */
+}
+
+.skills span:hover {
+    background-color: var(--accent-color); /* Change background color on hover */
+    color: var(--primary-bg); /* Change text color on hover to dark background */
+    transform: translateY(-3px); /* Move slightly up on hover */
+}
+.nav-link li:hover {
+    background-color: var(--accent-color); /* Change background color on hover */
+    color: var(--primary-bg); /* Change text color on hover to dark background */
+    transform: translateY(-3px); /* Move slightly up on hover */
+}
+footer {
+  text-align: center;
+  padding: 25px; /* Increase padding */
+  background: var(--secondary-bg); /* Use secondary background for footer */
+  margin-top: 80px; /* Increase distance from main content to footer */
+  font-size: 15px;
+  color: var(--text-color); /* Use text color */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow on top of footer */
+}
