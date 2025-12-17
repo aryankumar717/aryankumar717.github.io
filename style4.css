@@ -246,10 +246,16 @@ nav ul li a:hover::after {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+  /* Make all work tiles the same (square) size while keeping them responsive.
+     Use aspect-ratio where supported and provide a min-height fallback. */
+  aspect-ratio: 1 / 1;
+  min-height: 200px; /* fallback for older browsers that don't support aspect-ratio */
 }
 
 .work img {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop/cover so all images fill the same tile */
   border-radius: 10px;
   display: block;
   transition: transform 0.5s;
